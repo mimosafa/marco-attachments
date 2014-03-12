@@ -62,6 +62,8 @@ class marco_attachments {
 	function update_post_parent( $post_id ) {
 		if ( !isset( $_POST['_marco_nonce'] ) || !wp_verify_nonce( $_POST['_marco_nonce'], plugin_basename( __FILE__ ) ) )
 			return;
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return;
 		$exists_parent = wp_get_post_parent_id( $post_id );
 		if ( !isset( $_POST['marco-post-parent'] ) || $exists_parent == $_POST['marco-post-parent'] )
 			return;
