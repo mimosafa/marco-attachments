@@ -51,7 +51,7 @@ class marco_attachments {
 	function find_posts_div() { ?>
 <form method="post" action="" id="marco-find-posts-form">
 <?php
-			find_posts_div(); ?>
+		find_posts_div(); ?>
 </form>
 <?php
 	}
